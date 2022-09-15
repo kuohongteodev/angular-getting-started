@@ -1,7 +1,10 @@
 <h2>Products</h2>
 
 <div *ngFor="let product of productLists">
-  <a [title]="product.name + ' details'">
+  <a
+    [title]="product.name + ' details'"
+    [routerLink]="['/products', product.id]"
+  >
     <h3>{{ product.name }} (${{ product.price }})</h3>
   </a>
 
@@ -14,6 +17,7 @@
     (notify)="onNotify()"
   ></app-product-alerts>
 </div>
+
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
